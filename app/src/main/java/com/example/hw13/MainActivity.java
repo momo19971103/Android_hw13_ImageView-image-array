@@ -40,14 +40,14 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else {
                     int imageID = Integer.parseInt(editText.getText().toString());
-                    if (imageID > 9 || imageID < 0) {
-                        Toast toast = Toast.makeText(MainActivity.this, "請輸入0~9!!", Toast.LENGTH_LONG);
+                    if (imageID > 10 || imageID < 1) {
+                        Toast toast = Toast.makeText(MainActivity.this, "請輸入1~10!!", Toast.LENGTH_LONG);
                         toast.show();
 
                         imageID = Integer.parseInt(editText.getText().toString());
                     }
                     else {
-                        imageview.setImageResource(image[imageID]);
+                        imageview.setImageResource(image[imageID-1]);
                     }
                     InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
